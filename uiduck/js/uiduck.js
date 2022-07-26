@@ -1152,3 +1152,14 @@ function viewInputs(){
     document.getElementById("input_sign").attributes.removeNamedItem("hidden");
     document.getElementById("input_submit").attributes.removeNamedItem("style");
 }
+function viewChangelog(){
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.open('GET', 'https://localhost/ChangeLog', true);
+    httpRequest.send();
+    httpRequest.onreadystatechange = function () {
+        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+            var rst = httpRequest.responseText;
+            alert(rst);
+        }
+    };
+}
